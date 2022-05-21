@@ -1,0 +1,13 @@
+version: "3"
+services:
+  headless_chrome:
+    image: browserless/chrome:latest
+    ports:
+      - "3000:3000"
+    container_name: headless_chrome
+
+  scrapper:
+    build: .
+    container_name: scrapper
+    depends_on:
+      - headless_chrome
