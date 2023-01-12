@@ -1,0 +1,6 @@
+run_tests:
+  image: python:3.9.16-slim-bullseye
+  before_script:
+    - apt-get update && apt-get install make
+  script: 
+   - make test
